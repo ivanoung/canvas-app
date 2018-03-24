@@ -1,73 +1,28 @@
-.canvas {
-  position: absolute;
+:root{
+  --system-font: 'VT323', monospace;
+  --bgc: #FFFFFF;
+  --ftc: #111111;
 }
-#animation-drawing{
-  z-index: 49;
+
+body, ul{
+  margin: 0;
+  padding: 0;
+  background-color: var(--bgc);
+  font-family: var(--system-font);
+  line-height: 1;
 }
-#animation{
-  z-index: 50;
+
+.menu-bar{
+  border-bottom: 1px var(--ftc) solid;
+  padding: 0 10vmin;
+  
+
+
 }
 
 
-#canvas-indicator {
-  z-index: 1;
-}
-#canvas-ruler {
-  z-index: 0;
-}
-#canvas-draft {
-  z-index: 5;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px blue dotted;
-}
-#canvas-real {
-  z-index: 4;
-  border: 1px black dotted;
-}
-.pointer {
-  cursor: pointer;
-}
-
-.position-relative {
-  position: relative;
-}
-.position-absolute {
-  position: absolute;
-}
-
-.color-box {
-  display: grid;
-  border: 1px solid black;
-  grid-template-columns: repeat(10, 10%);
-  grid-template-rows: 10% 20% repeat(12, 1fr);
-  width: 100%;
-  height: 800px;
-}
-
-#col-display {
-  grid-row: 1/2;
-  grid-column: 1/11;
-}
-
-#col-cont {
-  grid-row: 2/3;
-  grid-column: 1/11;
-}
-
-#brushSize {
-  border-radius: 50%;
-  background: rgb(0, 0, 0);
-  height: 10px; /*Default values*/
-  width: 10px; /*Default values*/
-}
-
-.sidebar-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 48px; /* Height of navbar */
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+/* Status, for addClass and Remove Class */
+.selected {
+  background-color: var(--ftc);
+  color: var(--bgc);
 }

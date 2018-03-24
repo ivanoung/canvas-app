@@ -31,6 +31,22 @@ const canvasSettings = {
   },
 };
 
+
+    // initialize canvas
+    const canvases = document.querySelectorAll('canvas');
+    canvases.forEach((canvas) => {
+      canvas.width = (window.innerWidth * 0.72);
+      canvas.height = (window.innerHeight * 0.8);
+    });
+
+    //initialize canvas on resize
+    $(window).resize(function () {
+      canvases.forEach((canvas) => {
+        canvas.width = (window.innerWidth * 0.72);
+        canvas.height = (window.innerHeight * 0.8);
+      });
+    });
+
 $('#canvas-draft').mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseDown(mouseLoc, e, canvasSettings);
