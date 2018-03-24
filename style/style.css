@@ -10,6 +10,7 @@ body, ul{
   background-color: var(--bgc);
   font-family: var(--system-font);
   line-height: 1;
+  box-sizing: border-box;
 }
 
 .structure{
@@ -17,7 +18,7 @@ body, ul{
   height: 100vh;
   
   display: grid;
-  grid-template-rows: 10% 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 .menu-bar{
@@ -26,9 +27,35 @@ body, ul{
 }
 
 .canvas-contaner{
-  
+  position: relative;
 }
 
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* Layer adjustment */
+#animation-drawing{
+  z-index: 99;
+}
+#animation{
+  z-index: 100;
+}
+#canvas-real{
+  z-index: 0;
+}
+#canvas-ruler{
+  z-index: 1;
+}
+#canvs-indicator{
+  z-index: 2;
+}
+#canvas-draft{
+  z-index: 50;
+}
 
 /* Status, for addClass and Remove Class */
 .selected {

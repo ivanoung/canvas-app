@@ -1,17 +1,17 @@
-const canvasReal = document.getElementById('canvas-real');
-const contextReal = canvasReal.getContext('2d');
-const canvasDraft = document.getElementById('canvas-draft');
-const contextDraft = canvasDraft.getContext('2d');
+const canvasReal = document.getElementById("canvas-real");
+const contextReal = canvasReal.getContext("2d");
+const canvasDraft = document.getElementById("canvas-draft");
+const contextDraft = canvasDraft.getContext("2d");
 
-const canvasIndicator = document.getElementById('canvas-indicator');
-const contextIndicator = canvasIndicator.getContext('2d');
-const canvasRuler = document.getElementById('canvas-ruler');
-const contextRuler = canvasRuler.getContext('2d');
+const canvasIndicator = document.getElementById("canvas-indicator");
+const contextIndicator = canvasIndicator.getContext("2d");
+const canvasRuler = document.getElementById("canvas-ruler");
+const contextRuler = canvasRuler.getContext("2d");
 
-const canvasAnimation = document.getElementById('animation');
-const contextAnimation = canvasAnimation.getContext('2d');
-const canvasAnimationDrawing = document.getElementById('animation-drawing');
-const contextAnimationDrawing = canvasAnimationDrawing.getContext('2d');
+const canvasAnimation = document.getElementById("animation");
+const contextAnimation = canvasAnimation.getContext("2d");
+const canvasAnimationDrawing = document.getElementById("animation-drawing");
+const contextAnimationDrawing = canvasAnimationDrawing.getContext("2d");
 
 let currentFunction;
 let dragging = false;
@@ -19,41 +19,40 @@ let dragging = false;
 // Styling setting of canvas, applicable to both draft and real canvas(s)
 const canvasSettings = {
   brushSize: 8,
-  joint: 'round',
+  joint: "round",
   curCol: {
-    stroke: '#ff0000',
-    fill: '#00ff00',
-    bgc: '#FFFFFF',
+    stroke: "#ff0000",
+    fill: "#00ff00",
+    bgc: "#FFFFFF"
   },
   txt: {
-    size: '48px',
-    fontfamily: 'serif',
-  },
+    size: "48px",
+    fontfamily: "serif"
+  }
 };
 
+// initialize canvas
+const canvases = document.querySelectorAll("canvas");
+canvases.forEach(canvas => {
+  canvas.width = window.innerWidth * 0.72;
+  canvas.height = window.innerHeight * 0.8;
+});
 
-    // initialize canvas
-    const canvases = document.querySelectorAll('canvas');
-    canvases.forEach((canvas) => {
-      canvas.width = (window.innerWidth * 0.72);
-      canvas.height = (window.innerHeight * 0.8);
-    });
+//initialize canvas on resize
+$(window).resize(function() {
+  canvases.forEach(canvas => {
+    canvas.width = window.innerWidth * 0.72;
+    canvas.height = window.innerHeight * 0.8;
+  });
+});
 
-    //initialize canvas on resize
-    $(window).resize(function () {
-      canvases.forEach((canvas) => {
-        canvas.width = (window.innerWidth * 0.72);
-        canvas.height = (window.innerHeight * 0.8);
-      });
-    });
-
-$('#canvas-draft').mousedown(e => {
+$("#canvas-draft").mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseDown(mouseLoc, e, canvasSettings);
   dragging = true;
 });
 
-$('#canvas-draft').mousemove(e => {
+$("#canvas-draft").mousemove(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
   if (dragging) {
     currentFunction.onDragging(mouseLoc, e, canvasSettings);
@@ -61,19 +60,19 @@ $('#canvas-draft').mousemove(e => {
   currentFunction.onMouseMove(mouseLoc, e, canvasSettings);
 });
 
-$('#canvas-draft').mouseup(e => {
+$("#canvas-draft").mouseup(e => {
   dragging = false;
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseUp(mouseLoc, e, canvasSettings);
 });
 
-$('#canvas-draft').mouseleave(e => {
+$("#canvas-draft").mouseleave(e => {
   dragging = false;
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseLeave(mouseLoc, e, canvasSettings);
 });
 
-$('#canvas-draft').mouseenter(e => {
+$("#canvas-draft").mouseenter(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseEnter(mouseLoc, e, canvasSettings);
 });

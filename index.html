@@ -5,16 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>GEM Paint Replica</title>
-  <!-- Custom styles for this template -->
-  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <link href="./style/spectrum.css" rel="stylesheet" type='text/css'>
   <link href="./style/style.css" rel="stylesheet" type='text/css'>
 </head>
 
 <body>
-
+  <!-- Structure container -->
   <div class="structure">
     <!-- Top menu -->
     <div class="menu-bar" id="top-menu">
@@ -31,13 +30,14 @@
     <div class="canvas-contaner">
       <canvas class="canvas" id="animation-drawing"></canvas>
       <canvas class="canvas" id="animation"></canvas>
-      <canvas class="canvas" id="canvas-real"></canvas>
       <canvas class="canvas" id="canvas-draft"></canvas>
       <canvas class="canvas" id="canvas-indicator"></canvas>
       <canvas class="canvas" id="canvas-ruler"></canvas>
+      <canvas class="canvas" id="canvas-real"></canvas>
     </div>
     <!-- End of canvas stack -->
   </div>
+  <!-- End of structure container -->
 
 
 
@@ -46,14 +46,10 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-    crossorigin="anonymous"></script>
-  <script type='text/javascript' src="./scripts/canvas-common.js"></script>
-  <script type="text/javascript" src="./scripts/spectrum.js"></script>
+  <script type='text/javascript' src="./scripts/canvas-init.js"></script>
+  <!-- <script type="text/javascript" src="./scripts/spectrum.js"></script>
   <script type='text/javascript' src="./scripts/brush-size.js"></script>
   <script type='text/javascript' src="./scripts/pencil.js"></script>
   <script type='text/javascript' src="./scripts/eraser.js"></script>
@@ -73,15 +69,15 @@
   <script type='text/javascript' src="./scripts/color-picker.js"></script>
   <script type='text/javascript' src="./scripts/text.js"></script>
   <script type='text/javascript' src="./scripts/canvas-filter.js"></script>
-  <script type='text/javascript' src="./scripts/canvas-scale-ruler.js"></script>
+  <script type='text/javascript' src="./scripts/canvas-scale-ruler.js"></script> -->
   <!-- Opening Animation -->
-  <script type='text/javascript' src="./scripts/opening-animation.js"></script>
-  <script type='text/javascript' src="./scripts/reset.js"></script>
+  <!-- <script type='text/javascript' src="./scripts/opening-animation.js"></script>
+  <script type='text/javascript' src="./scripts/reset.js"></script> -->
   <script>
     // receiving input when performing mouse activity
 
     // Initiate canvas function when clicking corresponding button on canvas
-    currentFunction = new Pencil(contextReal, contextDraft);
+    // currentFunction = new Pencil(contextReal, contextDraft);
     $('span#pencil').addClass('active');
 
     // Initialize bootstrap tooltips
