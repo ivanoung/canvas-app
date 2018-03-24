@@ -17,8 +17,3 @@ function randInclusive(min: number, max: number): number {
 }
 
 
-// Return boolean of the pointing pixel is transparant or not
-function checkPix(context: CanvasRenderingContext2D, _x: number, _y: number): boolean {
-    let pixelData = context.getImageData(_x, _y, 1, 1).data;
-    return ((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0));
-}
