@@ -12,12 +12,21 @@ body, ul{
   line-height: 1;
 }
 
+.structure{
+  width: 100vw;
+  height: 100vh;
+  
+  display: grid;
+  grid-template-rows: 10% 1fr;
+}
+
 .menu-bar{
   border-bottom: 1px var(--ftc) solid;
   padding: 0 10vmin;
+}
+
+.canvas-contaner{
   
-
-
 }
 
 

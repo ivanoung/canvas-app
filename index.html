@@ -14,30 +14,35 @@
 </head>
 
 <body>
-  <!-- Animation canvas -->
 
-  <!-- End of animation canvas -->
+  <div class="structure">
+    <!-- Top menu -->
+    <div class="menu-bar" id="top-menu">
+      <span class="menu-item">Save</span>
+      <span class="menu-item">Save</span>
+      <span class="menu-item">Save</span>
+      <span class="menu-item">Save</span>
+      <span class="menu-item">Save</span>
+      <span class="menu-item">Save</span>
+    </div>
+    <!-- End of top menu -->
 
-
-  <!-- Template for popup -->
-  <div class="menu-bar" id="top-menu">
-    <span class="menu-item">Save</span>
-    <span class="menu-item">Save</span>
-    <span class="menu-item">Save</span>
-    <span class="menu-item">Save</span>
-    <span class="menu-item">Save</span>
-    <span class="menu-item">Save</span>
+    <!-- canvas stack -->
+    <div class="canvas-contaner">
+      <canvas class="canvas" id="animation-drawing"></canvas>
+      <canvas class="canvas" id="animation"></canvas>
+      <canvas class="canvas" id="canvas-real"></canvas>
+      <canvas class="canvas" id="canvas-draft"></canvas>
+      <canvas class="canvas" id="canvas-indicator"></canvas>
+      <canvas class="canvas" id="canvas-ruler"></canvas>
+    </div>
+    <!-- End of canvas stack -->
   </div>
 
 
-  <div class="row col">
-    <canvas class="canvas" id="animation-drawing"></canvas>
-    <canvas class="canvas" id="animation"></canvas>
-    <canvas class="canvas" id="canvas-real"></canvas>
-    <canvas class="canvas" id="canvas-draft"></canvas>
-    <canvas class="canvas" id="canvas-indicator"></canvas>
-    <canvas class="canvas" id="canvas-ruler"></canvas>
-  </div>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -73,8 +78,6 @@
   <script type='text/javascript' src="./scripts/opening-animation.js"></script>
   <script type='text/javascript' src="./scripts/reset.js"></script>
   <script>
-
-
     // receiving input when performing mouse activity
 
     // Initiate canvas function when clicking corresponding button on canvas

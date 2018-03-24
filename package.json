@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/naterexw/canvas-app/issues"
   },
-  "homepage": "https://github.com/naterexw/canvas-app#readme"
+  "homepage": "https://github.com/naterexw/canvas-app#readme",
+  "dependencies": {
+    "@types/jquery": "^3.3.1"
+  }
 }
