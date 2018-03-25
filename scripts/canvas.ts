@@ -5,12 +5,12 @@
 // const canvasAnimation = document.getElementById("animation");
 // const canvasAnimationDrawing = document.getElementById("animation-drawing");
 
-let canvasReal: HTMLCanvasElement;
-let canvasDraft: HTMLCanvasElement;
-let canvasIndicator: HTMLCanvasElement;
-let canvasRuler: HTMLCanvasElement;
-let canvasAnimation: HTMLCanvasElement;
-let canvasAnimationDrawing: HTMLCanvasElement;
+export let canvasReal: HTMLCanvasElement;
+export let canvasDraft: HTMLCanvasElement;
+export let canvasIndicator: HTMLCanvasElement;
+export let canvasRuler: HTMLCanvasElement;
+export let canvasAnimation: HTMLCanvasElement;
+export let canvasAnimationDrawing: HTMLCanvasElement;
 
 // const contextReal = (<HTMLCanvasElement>canvasReal).getContext('2d');
 // const contextDraft = (<HTMLCanvasElement>canvasReal).getContext('2d');
@@ -18,12 +18,12 @@ let canvasAnimationDrawing: HTMLCanvasElement;
 // const contextRuler = (<HTMLCanvasElement>canvasReal).getContext('2d');
 // const contextAnimation = (<HTMLCanvasElement>canvasReal).getContext('2d');
 // const contextAnimationDrawing = (<HTMLCanvasElement>canvasReal).getContext('2d');
-let contextReal: CanvasRenderingContext2D;
-let contextDraft: CanvasRenderingContext2D;
-let contextIndicator: CanvasRenderingContext2D;
-let contextRuler: CanvasRenderingContext2D;
-let contextAnimation: CanvasRenderingContext2D;
-let contextAnimationDrawing: CanvasRenderingContext2D;
+export let contextReal: CanvasRenderingContext2D;
+export let contextDraft: CanvasRenderingContext2D;
+export let contextIndicator: CanvasRenderingContext2D;
+export let contextRuler: CanvasRenderingContext2D;
+export let contextAnimation: CanvasRenderingContext2D;
+export let contextAnimationDrawing: CanvasRenderingContext2D;
 
 try {
   canvasReal =
