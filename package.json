@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/naterexw/canvas-app#readme",
   "dependencies": {
-    "@types/jquery": "^3.3.1"
+    "@types/jquery": "^3.3.1",
+    "systemjs": "^0.21.0"
   }
 }

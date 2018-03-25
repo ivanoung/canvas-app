@@ -67,12 +67,6 @@ try {
   // casting error, error message
 }
 
-// let contextDraft: CanvasRenderingContext2D;
-// let contextIndicator: CanvasRenderingContext2D;
-// let contextRuler: CanvasRenderingContext2D;
-// let contextAnimation: CanvasRenderingContext2D;
-// let contextAnimationDrawing: CanvasRenderingContext2D;
-
 // if (
 //   canvasReal instanceof HTMLCanvasElement && canvasReal.getContext("2d") instanceof CanvasRenderingContext2D
 //   // canvasReal instanceof HTMLCanvasElement
@@ -163,3 +157,6 @@ class PaintFunction {
 //   const mouseLoc = [e.offsetX, e.offsetY];
 //   currentFunction.onMouseEnter(mouseLoc, e, canvasSettings);
 // });
+
+
+console.log("canvas inited");

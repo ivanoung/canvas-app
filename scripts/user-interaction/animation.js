@@ -1,5 +1,6 @@
 "use strict";
-/// <reference path = "./utility.ts" />
+Object.defineProperty(exports, "__esModule", { value: true });
+const utility_1 = require("../common/utility");
 let arrOfFx = [];
 let animationStatus = false;
 let animationStylePicker = {
@@ -38,10 +39,13 @@ function looping() {
         let canvasWidth = $("#animation").width();
         let canvasHeight = $("#animation").height();
         if (typeof canvasWidth === "number" && typeof canvasHeight === "number") {
-            let coordinate = [Utility.randInclusive(0, canvasWidth), Utility.randInclusive(0, canvasHeight)];
-            if (Utility.checkPix(contextAnimationDrawing, coordinate[0], coordinate[1]) &&
-                Utility.checkPix(contextAnimation, coordinate[0], coordinate[1])) {
-                let ball = new Ball(coordinate, animationStylePicker.r[Utility.randInclusive(0, animationStylePicker.r.length)], animationStylePicker.shades[Utility.randInclusive(0, animationStylePicker.shades.length)]);
+            let coordinate = [
+                utility_1.randInclusive(0, canvasWidth),
+                utility_1.randInclusive(0, canvasHeight)
+            ];
+            if (utility_1.checkPix(contextAnimationDrawing, coordinate[0], coordinate[1]) &&
+                utility_1.checkPix(contextAnimation, coordinate[0], coordinate[1])) {
+                let ball = new Ball(coordinate, animationStylePicker.r[utility_1.randInclusive(0, animationStylePicker.r.length)], animationStylePicker.shades[utility_1.randInclusive(0, animationStylePicker.shades.length)]);
                 // Actually draw that ball
                 ball.draw(contextAnimation);
                 animationStylePicker.ballCounter++;
@@ -58,12 +62,12 @@ $(document).ready(() => {
     $(".navbar").click(() => {
         if (animationStatus) {
             $("#animation, #animation-drawing").hide();
-            Utility.cleanInterval(arrOfFx);
+            utility_1.cleanInterval(arrOfFx);
             animationStatus = false;
         }
         else {
             $("#animation, #animation-drawing").show();
-            Utility.parallelFx(arrOfFx, looping, 1000);
+            utility_1.parallelFx(arrOfFx, looping, 1000);
             animationStatus = true;
         }
     });

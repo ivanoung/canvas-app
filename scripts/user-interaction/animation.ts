@@ -1,4 +1,5 @@
-/// <reference path = "./utility.ts" />
+import {parallelFx, cleanInterval, checkPix, randInclusive} from "../common/utility"
+
 
 let arrOfFx: number[] = [];
 let animationStatus: boolean = false;
@@ -52,25 +53,25 @@ function looping() {
     let canvasHeight = $("#animation").height();
     if (typeof canvasWidth === "number" && typeof canvasHeight === "number") {
       let coordinate = [
-        Utility.randInclusive(0, canvasWidth),
-        Utility.randInclusive(0, canvasHeight)
+        randInclusive(0, canvasWidth),
+        randInclusive(0, canvasHeight)
       ];
 
       if (
-        Utility.checkPix(
+        checkPix(
           contextAnimationDrawing,
           coordinate[0],
           coordinate[1]
         ) &&
-        Utility.checkPix(contextAnimation, coordinate[0], coordinate[1])
+        checkPix(contextAnimation, coordinate[0], coordinate[1])
       ) {
         let ball = new Ball(
           coordinate,
           animationStylePicker.r[
-            Utility.randInclusive(0, animationStylePicker.r.length)
+            randInclusive(0, animationStylePicker.r.length)
           ],
           animationStylePicker.shades[
-            Utility.randInclusive(0, animationStylePicker.shades.length)
+            randInclusive(0, animationStylePicker.shades.length)
           ]
         );
         // Actually draw that ball
@@ -91,11 +92,11 @@ $(document).ready(() => {
   $(".navbar").click(() => {
     if (animationStatus) {
       $("#animation, #animation-drawing").hide();
-      Utility.cleanInterval(arrOfFx);
+      cleanInterval(arrOfFx);
       animationStatus = false;
     } else {
       $("#animation, #animation-drawing").show();
-      Utility.parallelFx(arrOfFx, looping, 1000);
+      parallelFx(arrOfFx, looping, 1000);
       animationStatus = true;
     }
   });
