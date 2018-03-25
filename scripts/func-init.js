@@ -83,7 +83,5 @@
       currentFunction = new BrushType2(contextReal, contextDraft);
     });
     $('#reset').on('click', function () {
-      oldFunction = currentFunction;
       currentFunction = new Reset(contextReal, contextDraft);
-      currentFunction = oldFunction;
     });

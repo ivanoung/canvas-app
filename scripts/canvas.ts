@@ -157,6 +157,3 @@ class PaintFunction {
 //   const mouseLoc = [e.offsetX, e.offsetY];
 //   currentFunction.onMouseEnter(mouseLoc, e, canvasSettings);
 // });
-
-
-console.log("canvas inited");
