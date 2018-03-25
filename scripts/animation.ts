@@ -1,3 +1,5 @@
+/// <reference path = "./utility.ts" />
+
 let arrOfFx: number[] = [];
 let animationStatus: boolean = false;
 let animationStylePicker = {
@@ -42,41 +44,40 @@ function centerText(
   context.fillText(centxt, canvas.width / 2, canvas.height / 2);
 }
 
-
-// Return boolean of the pointing pixel is transparant or not
-function checkPix(context: CanvasRenderingContext2D, _x: number, _y: number): boolean {
-    let pixelData = context.getImageData(_x, _y, 1, 1).data;
-    return ((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0));
-}
-
 // Check if the ball counter has reached to its max, if not, draw rand ball in spot with trans pixel
 function looping() {
   if (animationStylePicker.ballCounter < animationStylePicker.maxCounter) {
     // Create random coordinates
     let canvasWidth = $("#animation").width();
     let canvasHeight = $("#animation").height();
-    if (typeof canvasWidth === "number" && typeof canvasHeight === "number" ){
-        let coordinate = [randInclusive(0, canvasWidth), randInclusive(0, canvasHeight)];
+    if (typeof canvasWidth === "number" && typeof canvasHeight === "number") {
+      let coordinate = [
+        Utility.randInclusive(0, canvasWidth),
+        Utility.randInclusive(0, canvasHeight)
+      ];
 
-
-        if (
-          checkPix(contextAnimationDrawing, coordinate[0], coordinate[1]) &&
-          checkPix(contextAnimation, coordinate[0], coordinate[1])
-        ) {
-          let ball = new Ball(
-            coordinate,
-            animationStylePicker.r[randInclusive(0, animationStylePicker.r.length)],
-            animationStylePicker.shades[
-              randInclusive(0, animationStylePicker.shades.length)
-            ]
-          );
-          // Actually draw that ball
-          ball.draw(contextAnimation);
-          animationStylePicker.ballCounter++;
-        }
+      if (
+        Utility.checkPix(
+          contextAnimationDrawing,
+          coordinate[0],
+          coordinate[1]
+        ) &&
+        Utility.checkPix(contextAnimation, coordinate[0], coordinate[1])
+      ) {
+        let ball = new Ball(
+          coordinate,
+          animationStylePicker.r[
+            Utility.randInclusive(0, animationStylePicker.r.length)
+          ],
+          animationStylePicker.shades[
+            Utility.randInclusive(0, animationStylePicker.shades.length)
+          ]
+        );
+        // Actually draw that ball
+        ball.draw(contextAnimation);
+        animationStylePicker.ballCounter++;
+      }
     }
-    
-    
   }
 }
 
@@ -90,11 +91,11 @@ $(document).ready(() => {
   $(".navbar").click(() => {
     if (animationStatus) {
       $("#animation, #animation-drawing").hide();
-      cleanInterval(arrOfFx);
+      Utility.cleanInterval(arrOfFx);
       animationStatus = false;
     } else {
       $("#animation, #animation-drawing").show();
-      parallelFx(arrOfFx, looping, 1000);
+      Utility.parallelFx(arrOfFx, looping, 1000);
       animationStatus = true;
     }
   });
