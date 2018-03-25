@@ -4,30 +4,40 @@ const canvasIndicator = document.getElementById("canvas-indicator");
 const canvasRuler = document.getElementById("canvas-ruler");
 const canvasAnimation = document.getElementById("animation");
 const canvasAnimationDrawing = document.getElementById("animation-drawing");
-let contextReal: CanvasRenderingContext2D;
-let contextDraft: CanvasRenderingContext2D;
-let contextIndicator: CanvasRenderingContext2D;
-let contextRuler: CanvasRenderingContext2D;
-let contextAnimation: CanvasRenderingContext2D;
-let contextAnimationDrawing: CanvasRenderingContext2D;
 
-if (
-  canvasReal instanceof HTMLCanvasElement && canvasReal.getContext("2d") instanceof CanvasRenderingContext2D 
-  // canvasReal instanceof HTMLCanvasElement
-  // canvasDraft instanceof HTMLCanvasElement &&
-  // canvasIndicator instanceof HTMLCanvasElement &&
-  // canvasRuler instanceof HTMLCanvasElement &&
-  // canvasAnimation instanceof HTMLCanvasElement &&
-  // canvasAnimationDrawing instanceof HTMLCanvasElement
+
+
+const contextReal = (<HTMLCanvasElement>canvasReal).getContext('2d');
+const contextDraft = (<HTMLCanvasElement>canvasReal).getContext('2d');
+const contextIndicator = (<HTMLCanvasElement>canvasReal).getContext('2d');
+const contextRuler = (<HTMLCanvasElement>canvasReal).getContext('2d');
+const contextAnimation = (<HTMLCanvasElement>canvasReal).getContext('2d');
+const contextAnimationDrawing = (<HTMLCanvasElement>canvasReal).getContext('2d');
+
+
+// let contextDraft: CanvasRenderingContext2D;
+// let contextIndicator: CanvasRenderingContext2D;
+// let contextRuler: CanvasRenderingContext2D;
+// let contextAnimation: CanvasRenderingContext2D;
+// let contextAnimationDrawing: CanvasRenderingContext2D;
+
+// if (
+//   canvasReal instanceof HTMLCanvasElement && canvasReal.getContext("2d") instanceof CanvasRenderingContext2D 
+//   // canvasReal instanceof HTMLCanvasElement
+//   // canvasDraft instanceof HTMLCanvasElement &&
+//   // canvasIndicator instanceof HTMLCanvasElement &&
+//   // canvasRuler instanceof HTMLCanvasElement &&
+//   // canvasAnimation instanceof HTMLCanvasElement &&
+//   // canvasAnimationDrawing instanceof HTMLCanvasElement
   
-) {
-  contextReal = canvasReal.getContext("2d");
-  // contextDraft = canvasDraft.getContext("2d");
-  // contextIndicator = canvasIndicator.getContext("2d");
-  // contextRuler = canvasRuler.getContext("2d");
-  // contextAnimation = canvasAnimation.getContext("2d");
-  // contextAnimationDrawing = canvasAnimationDrawing.getContext("2d");
-}
+// ) {
+//   contextReal = canvasReal.getContext("2d");
+//   // contextDraft = canvasDraft.getContext("2d");
+//   // contextIndicator = canvasIndicator.getContext("2d");
+//   // contextRuler = canvasRuler.getContext("2d");
+//   // contextAnimation = canvasAnimation.getContext("2d");
+//   // contextAnimationDrawing = canvasAnimationDrawing.getContext("2d");
+// }
 
 // let currentFunction:(contextReal: CanvasRenderingContext2D, contextDraft: CanvasRenderingContext2D )=> void;
 let currentFunction: PaintFunction;
